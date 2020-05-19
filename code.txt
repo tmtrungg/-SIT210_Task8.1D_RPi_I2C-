@@ -17,7 +17,7 @@ def convertToNumber(data):
   result=(data[1] + (256 * data[0])) / 1.2
   return (result)
 
-def readLight(addr=DEVICE):
+def INPUT(addr=DEVICE):
     # Input i2c sensor of light level
     data = bus.read_i2c_block_data(addr,DEFAULT_MODE)
     input = convertToNumber(data)
@@ -33,6 +33,6 @@ def readLight(addr=DEVICE):
       return "Too bright"
 
 while True:
-    result = readLight()
+    result = INPUT()
     print("Light Level : " + str(result))
     time.sleep(0.5)
