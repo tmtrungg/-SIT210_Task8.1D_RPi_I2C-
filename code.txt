@@ -8,7 +8,7 @@ POWER_ON   = 0x01 # Power on
 RESET      = 0x07 # Reset data value
 
 # Default 1lx resolutionand 120ms
-ONE_TIME_HIGH_RES_MODE_1 = 0x20
+DEFAULT_MODE = 0x20
 
 bus = smbus.SMBus(1)
 
@@ -19,7 +19,7 @@ def convertToNumber(data):
 
 def readLight(addr=DEVICE):
     # Input i2c sensor of light level
-    data = bus.read_i2c_block_data(addr,ONE_TIME_HIGH_RES_MODE_1)
+    data = bus.read_i2c_block_data(addr,DEFAULT_MODE)
     input = convertToNumber(data)
     if ( input < 20 ):
       return "Too dark"
