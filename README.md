@@ -10,5 +10,5 @@ Build an I2C system that can detect and input data of environment's light intens
 ## Software:
 - Python IDE
 
-## Project Demo:
+## Project running demo:
 https://www.youtube.com/watch?v=xd9uCwHP8iw
